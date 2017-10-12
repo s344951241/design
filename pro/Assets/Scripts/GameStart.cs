@@ -12,6 +12,7 @@ public class GameStart : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         sceneController = new SceneStateController();
+        sceneController.SetState(new StartState(sceneController),false);
     }
 	
 	// Update is called once per frame

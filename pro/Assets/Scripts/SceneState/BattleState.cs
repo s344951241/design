@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleState : ISceneState
 {
-    public BattleState(string sceneName, SceneStateController controller) : base("battleScene", controller)
+    public BattleState(SceneStateController controller) : base("battleScene", controller)
     {
     }
 }
