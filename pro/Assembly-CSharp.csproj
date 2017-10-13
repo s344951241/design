@@ -52,12 +52,25 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DesignModel\StateModel.cs" />
+     <Compile Include="Assets\Scripts\ArchievementSystem\ArchievementSystem.cs" />
+     <Compile Include="Assets\Scripts\BaseClass\IGameSystem.cs" />
+     <Compile Include="Assets\Scripts\BaseClass\IUI.cs" />
+     <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\CharacterSystem.cs" />
+     <Compile Include="Assets\Scripts\EnergySystem\EnergySystem.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\GameEventSystem.cs" />
+     <Compile Include="Assets\Scripts\GameFacade.cs" />
      <Compile Include="Assets\Scripts\GameStart.cs" />
      <Compile Include="Assets\Scripts\SceneState\BattleState.cs" />
      <Compile Include="Assets\Scripts\SceneState\ISceneState.cs" />
      <Compile Include="Assets\Scripts\SceneState\MainMenuState.cs" />
      <Compile Include="Assets\Scripts\SceneState\SceneStateController.cs" />
      <Compile Include="Assets\Scripts\SceneState\StartState.cs" />
+     <Compile Include="Assets\Scripts\StageSystem\StageSystem.cs" />
+     <Compile Include="Assets\Scripts\UISytem\CampInfoUI.cs" />
+     <Compile Include="Assets\Scripts\UISytem\GamePauseUI.cs" />
+     <Compile Include="Assets\Scripts\UISytem\GameStateInfoUI.cs" />
+     <Compile Include="Assets\Scripts\UISytem\SoldierInfoUI.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
