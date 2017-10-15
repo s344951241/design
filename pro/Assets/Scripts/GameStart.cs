@@ -13,6 +13,11 @@ public class GameStart : MonoBehaviour {
 	void Start () {
         sceneController = new SceneStateController();
         sceneController.SetState(new StartState(sceneController),false);
+
+
+        ICharacter ch = new SoldierCaptain();
+        ch.Weapon = new WeaponGun();
+        ch.Attack(Vector3.zero);
     }
 	
 	// Update is called once per frame
