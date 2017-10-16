@@ -18,6 +18,10 @@ public abstract class IWeapon{
 
     protected float mEffectDisplayTime = 0;
 
+    public float AtkRange {
+        get { return mAtkRange; }
+    }
+
     public void Update()
     {
         if (mEffectDisplayTime > 0)

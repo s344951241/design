@@ -75,6 +75,11 @@
      <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierCaptain.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierRookie.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierSergeant.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\ISoldierState.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierAttack.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierChase.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierFSMSystem.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierIdle.cs" />
      <Compile Include="Assets\Scripts\EnergySystem\EnergySystem.cs" />
      <Compile Include="Assets\Scripts\GameEventSystem\GameEventSystem.cs" />
      <Compile Include="Assets\Scripts\GameFacade.cs" />
