@@ -106,4 +106,9 @@ public class GameFacade{
         mGameStateInfoUI.Release();
         mSoldierInfoUI.Release();
     }
+
+    public Vector3 GetEnemyTargetPos()
+    {
+        return Vector3.zero;//TODO
+    }
 }

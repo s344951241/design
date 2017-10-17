@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class IWeapon{
 
-    protected int mAtk;
+    private int mAtk;
     protected float mAtkRange;
-    protected int mAtkPlusValue;
+    //protected int mAtkPlusValue;
 
     protected GameObject mGameObject;
     protected ICharacter mOwner;
@@ -20,6 +20,14 @@ public abstract class IWeapon{
 
     public float AtkRange {
         get { return mAtkRange; }
+    }
+
+    public int Atk
+    {
+        get
+        {
+            return mAtk;
+        }
     }
 
     public void Update()

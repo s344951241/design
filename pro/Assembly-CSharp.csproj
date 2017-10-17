@@ -70,6 +70,10 @@
      <Compile Include="Assets\Scripts\CharacterSystem\Enemy\EnemyOgre.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Enemy\EnemyTroll.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Enemy\IEnemy.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\EnemyAI\EnemyAttack.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\EnemyAI\EnemyChase.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\EnemyAI\EnemyFSMSystem.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\EnemyAI\IEnemyState.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\ICharacter.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Soldier\ISoldier.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierCaptain.cs" />

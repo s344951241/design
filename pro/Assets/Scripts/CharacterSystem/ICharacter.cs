@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public abstract class ICharacter{
 
-    protected ICharacterAttr mICA;
+    protected ICharacterAttr mAttr;
     protected GameObject mGameObject;
     protected NavMeshAgent mNavAgent;
     protected AudioSource mAudio;
@@ -18,6 +18,27 @@ public abstract class ICharacter{
     public void Attack(ICharacter target)
     {
         mWeapon.Fire(target.position);
+        mGameObject.transform.LookAt(target.position);
+        playAnim("attack");
+        target.UnderAttack(mWeapon.Atk+ mAttr.CritValue);
+    }
+
+    public virtual void UnderAttack(int damage)
+    {
+        mAttr.takeDamage(damage);
+        //攻击的效果，音效，视效(只有敌人有)
+
+        //死亡的效果，音效，视效(只有战士有)
+    }
+
+    public void killed()
+    {
+        //TODO
+    }
+
+    public void Update()
+    {
+        mWeapon.Update();
     }
 
     public void playAnim(string name)
@@ -28,6 +49,7 @@ public abstract class ICharacter{
     public void moveTo(Vector3 pos)
     {
         mNavAgent.SetDestination(pos);
+        playAnim("move");
     }
     public Vector3 position
     {
@@ -40,6 +62,22 @@ public abstract class ICharacter{
             return mGameObject.transform.position;
         }
     }
+
+    protected void doPlayEffect(string effectName)
+    {
+        //加载特效TODO
+        GameObject effectGO;
+        //控制销TODO
+
+    }
+    protected void doPlaySound(string name)
+    {
+        AudioClip clip = null;//TODO
+        mAudio.clip = clip;
+        mAudio.Play();
+    }
+
+    //public abstract void UpdateFSMAI(List<ICharacter> targets);
     public float AtkRange {
         get {
             return mWeapon.AtkRange;

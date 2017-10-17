@@ -20,6 +20,6 @@ public interface IAttrStrategy {
     /// </summary>
     /// <param name="critRate"></param>
     /// <returns>暴击率</returns>
-    int getCritDmg(int critRate);
+    int getCritDmg(float critRate);
 
 }

@@ -10,7 +10,7 @@ public class SoldierAttrStrategy : IAttrStrategy
         return (lv - 1) * 110;
     }
 
-    public int getCritDmg(int critRate)
+    public int getCritDmg(float critRate)
     {
         return 0;
 

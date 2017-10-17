@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ISoldier : ICharacter {
+public abstract class ISoldier : ICharacter {
 
     protected SoldierFSMSystem mFSMSystem;
     public ISoldier():base()
@@ -31,5 +32,21 @@ public class ISoldier : ICharacter {
         mFSMSystem.CurrState.reason(targets);
         mFSMSystem.CurrState.act(targets);
     }
+
+    public override void UnderAttack(int damage)
+    {
+        base.UnderAttack(damage);
+        if (mAttr.CurHp <= 0)
+        {
+            playSound();
+            playEffect();
+            killed();
+        }
+    }
+
+    protected abstract void playSound();
+    protected abstract void playEffect();
+  
+
 
 }
