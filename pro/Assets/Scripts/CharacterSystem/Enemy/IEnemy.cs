@@ -18,10 +18,10 @@ public abstract class IEnemy : ICharacter {
     private void makeFSM()
     {
         mFSMSystem = new EnemyFSMSystem();
-        EnemyChase chaseState = new EnemyChase(mFSMSystem, this);
+        EnemyChaseState chaseState = new EnemyChaseState(mFSMSystem, this);
         chaseState.addTransition(EnemyTransition.CanAttack, EnemyStateID.Attack);
 
-        EnemyAttack attackState = new EnemyAttack(mFSMSystem, this);
+        EnemyAttackState attackState = new EnemyAttackState(mFSMSystem, this);
         attackState.addTransition(EnemyTransition.LostSoldier, EnemyStateID.Chase);
 
         mFSMSystem.addState(chaseState, attackState);

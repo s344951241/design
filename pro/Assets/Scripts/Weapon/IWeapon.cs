@@ -7,10 +7,10 @@ public abstract class IWeapon{
     private int mAtk;
     protected float mAtkRange;
     //protected int mAtkPlusValue;
+    private GameObject mGameObject;
 
-    protected GameObject mGameObject;
+
     protected ICharacter mOwner;
-      
     protected ParticleSystem mParticle;
     protected LineRenderer mLine;
     protected Light mLight;
@@ -18,6 +18,24 @@ public abstract class IWeapon{
 
     protected float mEffectDisplayTime = 0;
 
+    public ICharacter Owner {
+        set {
+            mOwner = value;
+        }
+    }
+
+    public IWeapon(int atk, int atkRange, GameObject gameObject)
+    {
+        mAtk = atk;
+        mAtkRange = AtkRange;
+        mGameObject = gameObject;
+
+        Transform effect = mGameObject.transform.Find("Effect");
+        mParticle = effect.GetComponent<ParticleSystem>();
+        mLine = effect.GetComponent<LineRenderer>();
+        mLight = effect.GetComponent<Light>();
+        mAudio = effect.GetComponent<AudioSource>();
+    }
     public float AtkRange {
         get { return mAtkRange; }
     }
@@ -27,6 +45,19 @@ public abstract class IWeapon{
         get
         {
             return mAtk;
+        }
+    }
+
+    public GameObject GameObject
+    {
+        get
+        {
+            return mGameObject;
+        }
+
+        set
+        {
+            mGameObject = value;
         }
     }
 
@@ -85,7 +116,7 @@ public abstract class IWeapon{
     protected void doSound(string name)
     {
         string clipName = name;
-        AudioClip clip = null;//TODO
+        AudioClip clip = FactoryManager.AssetFactory.LoadAudioClip(name);
         mAudio.clip = clip;
         mAudio.Play();
     }
@@ -94,4 +125,11 @@ public abstract class IWeapon{
         mLight.enabled = false;
         mLine.enabled = false;
     }
+}
+
+public enum WeaponType
+{
+    Gun,
+    Rifle,
+    Rocket
 }

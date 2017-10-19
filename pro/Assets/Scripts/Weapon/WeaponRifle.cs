@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponRifle :IWeapon{
+    public WeaponRifle(int atk, int atkRange, GameObject gameObject) : base(atk, atkRange, gameObject)
+    {
+    }
+
     protected override void playBulletEffect(Vector3 targetPos)
     {
         DoBulletEffect(0.3f, targetPos);

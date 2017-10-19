@@ -13,14 +13,14 @@ public abstract class ISoldier : ICharacter {
     private void makeFSM()
     {
         mFSMSystem = new SoldierFSMSystem();
-        SoldierIdle idleState = new SoldierIdle(mFSMSystem, this);
+        SoldierIdleState idleState = new SoldierIdleState(mFSMSystem, this);
         idleState.addTransition(SoldierTransition.SeeEnemy, SoldierStateID.Chase);
 
-        SoldierChase chaseState = new SoldierChase(mFSMSystem, this);
+        SoldierChaseState chaseState = new SoldierChaseState(mFSMSystem, this);
         chaseState.addTransition(SoldierTransition.NoEnemy, SoldierStateID.Idle);
         chaseState.addTransition(SoldierTransition.CanAttack, SoldierStateID.Attack);
 
-        SoldierAttack attackState = new SoldierAttack(mFSMSystem, this);
+        SoldierAttackState attackState = new SoldierAttackState(mFSMSystem, this);
         attackState.addTransition(SoldierTransition.NoEnemy, SoldierStateID.Idle);
         attackState.addTransition(SoldierTransition.SeeEnemy, SoldierStateID.Chase);
 

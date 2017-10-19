@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoldierAttr : ICharacterAttr
 {
-    public SoldierAttr(IAttrStrategy strategy) : base(strategy)
+    public SoldierAttr(IAttrStrategy strategy, string name,int lv, int maxHp, float moveSpeed, string icon, string prefab) : base(strategy, name,lv, maxHp, moveSpeed, icon, prefab)
     {
     }
 }

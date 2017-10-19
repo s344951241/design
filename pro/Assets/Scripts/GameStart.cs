@@ -16,7 +16,7 @@ public class GameStart : MonoBehaviour {
 
 
         ICharacter ch = new SoldierCaptain();
-        ch.Weapon = new WeaponGun();
+        //ch.Weapon = new WeaponGun();
         //ch.Attack(Vector3.zero);
     }
 	
