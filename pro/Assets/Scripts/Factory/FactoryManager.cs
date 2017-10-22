@@ -8,6 +8,7 @@ public static class FactoryManager {
     private static ICharacterFactory mSoldierFactory = null;
     private static ICharacterFactory mEnemyFactory = null;
     private static IWeaponFactory mWeaponFactory = null;
+    private static IAttrFactory mAttrFactory = null;
 
     public static IAssetFactory AssetFactory
     {
@@ -53,6 +54,17 @@ public static class FactoryManager {
                 mWeaponFactory = new WeaponFactory();
             }
             return mWeaponFactory;
+        }
+    }
+
+    public static IAttrFactory AttrFactory
+    {
+        get {
+            if (mAttrFactory == null)
+            {
+                mAttrFactory = new AttrFactory();
+            }
+            return mAttrFactory;
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WeaponGun :IWeapon{
 
-    public WeaponGun(int atk, int atkRange, GameObject gameObject) : base(atk, atkRange, gameObject)
+    public WeaponGun(WeaponBaseAttr attr, GameObject gameObject) : base(attr, gameObject)
     {
 
     }

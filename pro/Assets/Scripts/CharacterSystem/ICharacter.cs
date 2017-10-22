@@ -84,6 +84,9 @@ public abstract class ICharacter{
     }
     public ICharacterAttr Attr {
         set { mAttr = value; }
+        get {
+            return mAttr;
+        }
     }
 
     public GameObject GameObject {

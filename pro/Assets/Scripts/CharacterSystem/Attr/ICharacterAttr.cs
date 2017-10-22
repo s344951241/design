@@ -3,42 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ICharacterAttr  {
-    protected string mName;
-    protected int mMaxHp;
-    protected float mMoveSpeed;
-    protected string mIcon;
-    protected string mPrefabName;
+    #region 固定属性
+    protected BaseAttr mBaseAttr;
+    #endregion
 
+    #region 变化属性
     protected int mCurHp;
     protected int mLv;
-    protected float mCriRate;//暴击率(0-1)
-
     protected int mDmgDescValue;
+    #endregion
 
     protected IAttrStrategy mStrategy;
     private IAttrStrategy strategy;
 
-    public ICharacterAttr(IAttrStrategy strategy,string name,int lv,int maxHp,float moveSpeed,string icon,string prefab)
+    public ICharacterAttr(IAttrStrategy strategy,int lv,BaseAttr baseAttr)
     {
-        mName = name;
+        mBaseAttr = baseAttr;
         mLv = lv;
-        mMaxHp = maxHp;
-        mMoveSpeed = moveSpeed;
-        mIcon = icon;
-        mPrefabName = prefab;
         mStrategy = strategy;
         mDmgDescValue = mStrategy.getDmgDescValue(mLv);
-        mCurHp = mMaxHp + mStrategy.getAddMaxHPValue(mLv);
+        mCurHp = mBaseAttr.MaxHp + mStrategy.getAddMaxHPValue(mLv);
     }
 
     public int CritValue
     {
-        get { return mStrategy.getCritDmg(mCriRate); }
+        get { return mStrategy.getCritDmg(mBaseAttr.CriRate); }
     }
     public int CurHp
     {
         get { return mCurHp; }
     }
+
+    public BaseAttr BaseAttr
+    {
+        get
+        {
+            return mBaseAttr;
+        }
+
+    }
+
     public void takeDamage(int damage)
     {
         damage -= mDmgDescValue;

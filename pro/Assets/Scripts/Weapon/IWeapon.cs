@@ -4,8 +4,7 @@ using UnityEngine;
 
 public abstract class IWeapon{
 
-    private int mAtk;
-    protected float mAtkRange;
+    protected WeaponBaseAttr mBaseAttr;
     //protected int mAtkPlusValue;
     private GameObject mGameObject;
 
@@ -24,10 +23,9 @@ public abstract class IWeapon{
         }
     }
 
-    public IWeapon(int atk, int atkRange, GameObject gameObject)
+    public IWeapon(WeaponBaseAttr baseAttr, GameObject gameObject)
     {
-        mAtk = atk;
-        mAtkRange = AtkRange;
+        mBaseAttr = baseAttr;
         mGameObject = gameObject;
 
         Transform effect = mGameObject.transform.Find("Effect");
@@ -37,14 +35,14 @@ public abstract class IWeapon{
         mAudio = effect.GetComponent<AudioSource>();
     }
     public float AtkRange {
-        get { return mAtkRange; }
+        get { return mBaseAttr.AtkRange; }
     }
 
     public int Atk
     {
         get
         {
-            return mAtk;
+            return mBaseAttr.Atk;
         }
     }
 

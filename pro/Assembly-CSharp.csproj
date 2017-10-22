@@ -59,7 +59,12 @@
      <Compile Include="Assets\Scripts\ArchievementSystem\ArchievementSystem.cs" />
      <Compile Include="Assets\Scripts\BaseClass\IGameSystem.cs" />
      <Compile Include="Assets\Scripts\BaseClass\IUI.cs" />
+     <Compile Include="Assets\Scripts\Builder\CharacterBuilderDirector.cs" />
+     <Compile Include="Assets\Scripts\Builder\EnemyBuilder.cs" />
+     <Compile Include="Assets\Scripts\Builder\ICharacterBuilder.cs" />
+     <Compile Include="Assets\Scripts\Builder\SoldierBuilder.cs" />
      <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\Attr\BaseAttr.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Attr\EnemyAttr.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Attr\ICharacterAttr.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Attr\SoldierAttr.cs" />
@@ -91,6 +96,8 @@
      <Compile Include="Assets\Scripts\Factory\Asset\LocalAssetFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Asset\RemoteAssetFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Asset\ResourcesAssetFactory.cs" />
+     <Compile Include="Assets\Scripts\Factory\Attr\AttrFactory.cs" />
+     <Compile Include="Assets\Scripts\Factory\Attr\IAttrFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Charactor\EnemyFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Charactor\ICharacterFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Charactor\SoldierFactory.cs" />
@@ -111,6 +118,7 @@
      <Compile Include="Assets\Scripts\UISytem\GamePauseUI.cs" />
      <Compile Include="Assets\Scripts\UISytem\GameStateInfoUI.cs" />
      <Compile Include="Assets\Scripts\UISytem\SoldierInfoUI.cs" />
+     <Compile Include="Assets\Scripts\Weapon\Attr\WeaponBaseAttr.cs" />
      <Compile Include="Assets\Scripts\Weapon\IWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponGun.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponRifle.cs" />
