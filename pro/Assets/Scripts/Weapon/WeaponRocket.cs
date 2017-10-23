@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponRocket : IWeapon {
-    public WeaponRocket(int atk, int atkRange, GameObject gameObject) : base(atk, atkRange, gameObject)
+    public WeaponRocket(WeaponBaseAttr baseAttr, GameObject gameObject) : base(baseAttr, gameObject)
     {
     }
 

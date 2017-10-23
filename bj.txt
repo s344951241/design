@@ -28,7 +28,11 @@
 10.享元模式
 	--共享某个对象(跟工厂模式组合使用,管理共享属性，创建共享属性)
 
+11.组合模式
+	--树
 
+12.
 
 switch 两次tab建（回车）
 MonoBehaviour有一个Invoke方法：过多长时间执行一个方法
+window-lighting-setting里的auto Generate设置取消，使场景一直是亮的

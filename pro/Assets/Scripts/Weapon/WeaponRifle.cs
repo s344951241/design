@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponRifle :IWeapon{
-    public WeaponRifle(int atk, int atkRange, GameObject gameObject) : base(atk, atkRange, gameObject)
+    public WeaponRifle(WeaponBaseAttr baseAttr, GameObject gameObject) : base(baseAttr, gameObject)
     {
     }
 
