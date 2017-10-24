@@ -10,11 +10,11 @@ public class ResourcesAssetFactory : IAssetFactory
     private const string WeaponPath = "Weapons/";
     private const string EffectPath = "Effects/";
     private const string AudioPath = "Audios/";
-    private const string SpritePath = "Sprite/";
+    private const string SpritePath = "Sprites/";
 
     public AudioClip LoadAudioClip(string name)
     {
-        return LoadAsset(AudioPath + name) as AudioClip;
+        return Resources.Load(SpritePath + name, typeof(AudioClip)) as AudioClip;
     }
 
     public GameObject LoadEffect(string name)
@@ -34,7 +34,7 @@ public class ResourcesAssetFactory : IAssetFactory
 
     public Sprite LoadSprite(string name)
     {
-        return LoadAsset(SpritePath + name) as Sprite;
+        return Resources.Load(SpritePath + name, typeof(Sprite)) as Sprite;
     }
 
     public GameObject LoadWeapon(string name)

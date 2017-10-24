@@ -111,4 +111,9 @@ public class GameFacade{
     {
         return Vector3.zero;//TODO
     }
+
+    public void showCampInfo(ICamp camp)
+    {
+        mCampInfoUI.showCampInfo(camp);
+    }
 }

@@ -7,7 +7,7 @@ public class SoldierChaseState : ISoldierState
 {
     public SoldierChaseState(SoldierFSMSystem fsm, ICharacter c) : base(fsm, c)
     {
-        mStateID = SoldierStateID.Idle;
+        mStateID = SoldierStateID.Chase;
     }
     public override void act(List<ICharacter> target)
     {

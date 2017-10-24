@@ -12,5 +12,6 @@ public class SoldierFactory : ICharacterFactory
         ICharacterBuilder builder = new SoldierBuilder(character, typeof(T), weaponType, pos, lv);
 
         return CharacterBuilderDirector.Construct(builder);
+
     }
 }

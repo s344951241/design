@@ -65,6 +65,8 @@
      <Compile Include="Assets\Scripts\Builder\ICharacterBuilder.cs" />
      <Compile Include="Assets\Scripts\Builder\SoldierBuilder.cs" />
      <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+     <Compile Include="Assets\Scripts\CampSystem\ICamp.cs" />
+     <Compile Include="Assets\Scripts\CampSystem\SoldierCamp.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Attr\BaseAttr.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Attr\EnemyAttr.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Attr\ICharacterAttr.cs" />
@@ -114,6 +116,7 @@
      <Compile Include="Assets\Scripts\SceneState\SceneStateController.cs" />
      <Compile Include="Assets\Scripts\SceneState\StartState.cs" />
      <Compile Include="Assets\Scripts\StageSystem\StageSystem.cs" />
+     <Compile Include="Assets\Scripts\Tools\UITool.cs" />
      <Compile Include="Assets\Scripts\Tools\UnityTool.cs" />
      <Compile Include="Assets\Scripts\UISytem\CampInfoUI.cs" />
      <Compile Include="Assets\Scripts\UISytem\GamePauseUI.cs" />

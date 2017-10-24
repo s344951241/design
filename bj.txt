@@ -34,5 +34,13 @@
 12.
 
 switch 两次tab建（回车）
+
 MonoBehaviour有一个Invoke方法：过多长时间执行一个方法
+
 window-lighting-setting里的auto Generate设置取消，使场景一直是亮的
+
+get方法也是可以重写的：
+ public abstract int Lv { get; }
+
+加载： return Resources.Load(SpritePath + name, typeof(AudioClip)) as AudioClip
+

@@ -6,7 +6,7 @@ public static class UnityTool  {
 
     public static GameObject FindChild(GameObject parent, string childName)
     {
-        Transform[] childrens = parent.GetComponents<Transform>();
+        Transform[] childrens = parent.GetComponentsInChildren<Transform>();
         bool isFinded = false;
         Transform child = null;
         foreach (Transform t in childrens)
@@ -21,7 +21,9 @@ public static class UnityTool  {
                 child = t;
             }
         }
-        return child.gameObject;
+        if(isFinded)
+            return child.gameObject;
+        return null;
     }
 
     public static void Attach(GameObject parent, GameObject child)

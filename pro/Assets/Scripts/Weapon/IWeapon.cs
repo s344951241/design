@@ -127,7 +127,8 @@ public abstract class IWeapon{
 
 public enum WeaponType
 {
-    Gun,
-    Rifle,
-    Rocket
+    Gun = 0,
+    Rifle = 1,
+    Rocket = 2,
+    MAX
 }
