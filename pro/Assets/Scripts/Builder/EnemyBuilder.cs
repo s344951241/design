@@ -23,6 +23,11 @@ public class EnemyBuilder : ICharacterBuilder
         mCharacter.GameObject = characterGO;
     }
 
+    public override void addInCharacterSystem()
+    {
+        GameFacade.Instance.addEnemy(mCharacter as IEnemy);
+    }
+
     public override void addWeapon()
     {
         IWeapon weapon = FactoryManager.WeaponFactory.CreateWeapon(mWeaponType);

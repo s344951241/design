@@ -24,6 +24,11 @@ public class SoldierBuilder : ICharacterBuilder
         mCharacter.GameObject = characterGO;
     }
 
+    public override void addInCharacterSystem()
+    {
+        GameFacade.Instance.addSoldier(mCharacter as ISoldier);
+    }
+
     public override void addWeapon()
     {
         IWeapon weapon = FactoryManager.WeaponFactory.CreateWeapon(mWeaponType);

@@ -116,4 +116,14 @@ public class GameFacade{
     {
         mCampInfoUI.showCampInfo(camp);
     }
+
+    public void addSoldier(ISoldier soldier)
+    {
+        mCharacterSystem.addSoldier(soldier);
+    }
+
+    public void addEnemy(IEnemy enemy)
+    {
+        mCharacterSystem.addEnemy(enemy);
+    }
 }

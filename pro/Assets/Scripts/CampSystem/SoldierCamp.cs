@@ -30,4 +30,10 @@ public class SoldierCamp : ICamp {
             return mWeaponType;
         }
     }
+
+    public override void Train()
+    {
+        TrainSoldierCommand cmd = new TrainSoldierCommand(mSoldierType, mWeaponType, mPosition, mLv);
+        mCommands.Add(cmd);
+    }
 }

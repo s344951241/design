@@ -11,6 +11,7 @@ public abstract class ICharacterBuilder{
     protected ICharacter mCharacter;
     public ICharacterBuilder(ICharacter character, Type t,WeaponType weaponType,Vector3 pos,int lv)
     {
+        mCharacter = character;
         mType = t;
         mWeaponType = weaponType;
         mPos = pos;
@@ -21,5 +22,6 @@ public abstract class ICharacterBuilder{
     public abstract void addGameObject();
     public abstract void addWeapon();
 
+    public abstract void addInCharacterSystem();
     public abstract ICharacter getResult();
 }

@@ -11,6 +11,10 @@ public abstract class ICamp{
     protected Vector3 mPosition;//集合点
     protected float mTrainTime;
 
+    protected List<ITrainCommand> mCommands;
+
+    private float mTrainTimer = 0;
+
     public string Icon
     {
         get
@@ -36,9 +40,44 @@ public abstract class ICamp{
         mSoldierType = soldierType;
         mPosition = pos;
         mTrainTime = trainTime;
+        mTrainTimer = mTrainTime;
+        mCommands = new List<ITrainCommand>();
     }
     public virtual void Update()
     {
+        UpdateCommand();
+    }
+    private void UpdateCommand()
+    {
+        if (mCommands.Count <= 0)
+            return;
+        mTrainTimer -= Time.deltaTime;
+        if (mTrainTimer <= 0)
+        {
+            mCommands[0].Excute();
+            mCommands.RemoveAt(0);
+            mTrainTimer = mTrainTime;
+        }
+    }
 
+    public abstract void Train();
+    public void CancelTrain()
+    {
+        if (mCommands.Count > 0)
+        {
+            mCommands.RemoveAt(mCommands.Count - 1);
+            if (mCommands.Count == 0)
+            {
+                mTrainTimer = mTrainTime;
+            }
+        }
+    }
+
+    public int GetTrainCount {
+        get { return mCommands.Count; }
+    }
+    public float GetTrainRemainingTime
+    {
+       get { return mTrainTimer; }
     }
 }

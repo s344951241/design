@@ -36,9 +36,19 @@ public class CampInfoUI : IUI {
         mTrainCount = UITool.FindChild<Text>(mRootUI, "TrainCount");
         mTrainTime = UITool.FindChild<Text>(mRootUI, "TrainTime");
 
+        mTrain.onClick.AddListener(onTrainClick);
+        mCancelTrain.onClick.AddListener(onCancelTrainClick);
         Hide();
     }
-
+    public override void Update()
+    {
+        base.Update();
+        if (mCamp != null)
+        {
+            showTrainingInfo();
+        }
+       
+    }
     public void showCampInfo(ICamp camp)
     {
         Show();
@@ -47,9 +57,22 @@ public class CampInfoUI : IUI {
         mCampName.text = camp.Name;
         mCampLv.text = camp.Lv.ToString();
         showWeaponLv(camp.WeaponType);
+        showTrainingInfo();
+    }
+    private void showTrainingInfo()
+    {
+        mTrainCount.text = mCamp.GetTrainCount.ToString();
+        mTrainTime.text = mCamp.GetTrainRemainingTime.ToString("0.0");
+        if (mCamp.GetTrainCount == 0)
+        {
+            mCancelTrain.interactable = false;
+        }
+        else
+        {
+            mCancelTrain.interactable = true;
+        }
 
     }
-
     private void showWeaponLv(WeaponType type)
     {
         switch (type)
@@ -68,5 +91,17 @@ public class CampInfoUI : IUI {
             default:
                 break;
         }
+    }
+
+    public void onTrainClick()
+    {
+        //能量是否够TODO
+        mCamp.Train();
+    }
+
+    public void onCancelTrainClick()
+    {
+        //回收能量TODO
+        mCamp.CancelTrain();
     }
 }

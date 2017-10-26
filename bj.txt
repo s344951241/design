@@ -31,7 +31,8 @@
 11.组合模式
 	--树
 
-12.
+12.命令模式
+	--一个命令的集合，命令作为参数添加命令，命令集合去执行命令自己的方法
 
 switch 两次tab建（回车）
 
@@ -43,4 +44,8 @@ get方法也是可以重写的：
  public abstract int Lv { get; }
 
 加载： return Resources.Load(SpritePath + name, typeof(AudioClip)) as AudioClip
+
+ToString("0.0")小数点保留
+
+导航网格Navgation static 加入cube辅助生成然后删掉
 

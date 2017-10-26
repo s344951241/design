@@ -32,8 +32,8 @@ public class AttrFactory : IAttrFactory
     private void InitWeaponBaseAttr()
     {
         mWeaponBaseAttr.Add(WeaponType.Gun, new WeaponBaseAttr("手枪", 20, 5, "WeaponGun"));
-        mWeaponBaseAttr.Add(WeaponType.Gun, new WeaponBaseAttr("长枪", 30, 7, "WeaponRifle"));
-        mWeaponBaseAttr.Add(WeaponType.Gun, new WeaponBaseAttr("火箭", 40, 8, "WeaponRocket"));
+        mWeaponBaseAttr.Add(WeaponType.Rifle, new WeaponBaseAttr("长枪", 30, 7, "WeaponRifle"));
+        mWeaponBaseAttr.Add(WeaponType.Rocket, new WeaponBaseAttr("火箭", 40, 8, "WeaponRocket"));
     }
 
     public BaseAttr getBaseAttr(Type t)

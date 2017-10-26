@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\DesignModel\BridgeModel.cs" />
     <Compile Include="Assets\DesignModel\BuilderModel.cs" />
+    <Compile Include="Assets\DesignModel\CommandModel.cs" />
     <Compile Include="Assets\DesignModel\CompositeModel.cs" />
     <Compile Include="Assets\DesignModel\StateModel.cs" />
     <Compile Include="Assets\DesignModel\StrategyModel.cs" />
@@ -92,6 +93,8 @@
     <Compile Include="Assets\Scripts\Builder\ICharacterBuilder.cs" />
     <Compile Include="Assets\Scripts\Builder\SoldierBuilder.cs" />
     <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\Command\ITrainCommand.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\Command\TrainSoldierCommand.cs" />
     <Compile Include="Assets\Scripts\CampSystem\ICamp.cs" />
     <Compile Include="Assets\Scripts\CampSystem\SoldierCamp.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Attr\BaseAttr.cs" />

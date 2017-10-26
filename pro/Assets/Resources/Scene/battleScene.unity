@@ -108,7 +108,7 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 5cf502157017aaf4b8a688bb9cb57999, type: 2}
 --- !u!1 &9354909
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +294,26 @@ Prefab:
     - target: {fileID: 171252, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
       propertyPath: m_Name
       value: SoldierCamp_Sergeant
+      objectReference: {fileID: 0}
+    - target: {fileID: 122840, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 122844, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 171256, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 171252, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 122842, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
@@ -1045,7 +1065,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &247325253
 Transform:
@@ -2155,6 +2175,26 @@ Prefab:
       propertyPath: m_Name
       value: SoldierCamp_Captain
       objectReference: {fileID: 0}
+    - target: {fileID: 122840, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 171256, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 122842, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 171252, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 122844, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
   m_IsPrefabParent: 0
@@ -2881,6 +2921,26 @@ Prefab:
     - target: {fileID: 171252, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
       propertyPath: m_Name
       value: SoldierCamp_Rookie
+      objectReference: {fileID: 0}
+    - target: {fileID: 122840, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 171252, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 122842, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 122844, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 171256, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efe30b54343a2f54aa0df9ba2cf93965, type: 2}
@@ -5622,6 +5682,10 @@ Prefab:
     - target: {fileID: 166190, guid: be92e67200ac7de42ae6330aa8be2512, type: 2}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 166190, guid: be92e67200ac7de42ae6330aa8be2512, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be92e67200ac7de42ae6330aa8be2512, type: 2}
