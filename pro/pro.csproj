@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\DesignModel\BridgeModel.cs" />
     <Compile Include="Assets\DesignModel\BuilderModel.cs" />
+    <Compile Include="Assets\DesignModel\ChainModel.cs" />
     <Compile Include="Assets\DesignModel\CommandModel.cs" />
     <Compile Include="Assets\DesignModel\CompositeModel.cs" />
     <Compile Include="Assets\DesignModel\StateModel.cs" />
@@ -95,6 +96,8 @@
     <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
     <Compile Include="Assets\Scripts\CampSystem\Command\ITrainCommand.cs" />
     <Compile Include="Assets\Scripts\CampSystem\Command\TrainSoldierCommand.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\IEnergyStrategy.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\SoldierEnergyCostStrategy.cs" />
     <Compile Include="Assets\Scripts\CampSystem\ICamp.cs" />
     <Compile Include="Assets\Scripts\CampSystem\SoldierCamp.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Attr\BaseAttr.cs" />
@@ -146,6 +149,8 @@
     <Compile Include="Assets\Scripts\SceneState\MainMenuState.cs" />
     <Compile Include="Assets\Scripts\SceneState\SceneStateController.cs" />
     <Compile Include="Assets\Scripts\SceneState\StartState.cs" />
+    <Compile Include="Assets\Scripts\StageSystem\Handler\IStageHandler.cs" />
+    <Compile Include="Assets\Scripts\StageSystem\Handler\NormalStageHandler.cs" />
     <Compile Include="Assets\Scripts\StageSystem\StageSystem.cs" />
     <Compile Include="Assets\Scripts\Tools\UITool.cs" />
     <Compile Include="Assets\Scripts\Tools\UnityTool.cs" />

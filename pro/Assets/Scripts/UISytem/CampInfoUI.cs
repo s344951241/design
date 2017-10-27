@@ -38,6 +38,8 @@ public class CampInfoUI : IUI {
 
         mTrain.onClick.AddListener(onTrainClick);
         mCancelTrain.onClick.AddListener(onCancelTrainClick);
+        mUp.onClick.AddListener(OnCampUpClick);
+        mWeaponUp.onClick.AddListener(OnWeaponUpClick);
         Hide();
     }
     public override void Update()
@@ -57,6 +59,7 @@ public class CampInfoUI : IUI {
         mCampName.text = camp.Name;
         mCampLv.text = camp.Lv.ToString();
         showWeaponLv(camp.WeaponType);
+        mTrain.transform.Find("Text").GetComponent<Text>().text = "训练\n" + mCamp.EnergyCostTrain + "能量";
         showTrainingInfo();
     }
     private void showTrainingInfo()
@@ -93,15 +96,63 @@ public class CampInfoUI : IUI {
         }
     }
 
-    public void onTrainClick()
+    private void onTrainClick()
     {
-        //能量是否够TODO
-        mCamp.Train();
+        int energy = mCamp.EnergyCostTrain;
+        if (GameFacade.Instance.takeEnergy(energy))
+        {
+            mCamp.Train();
+        }
+        else
+        {
+            GameFacade.Instance.showMsg("energy is not enough to train");
+        }
+
     }
 
-    public void onCancelTrainClick()
+    private void onCancelTrainClick()
     {
-        //回收能量TODO
+        mFacade.RecycleEnergy(mCamp.EnergyCostTrain);
         mCamp.CancelTrain();
+    }
+
+    private void OnCampUpClick()
+    {
+        int energy = mCamp.EnergyCostCampUpGrade;
+        if (energy < 0)
+        {
+            mFacade.showMsg("camp is maxLv can't up");
+            return;
+        }
+        if (mFacade.takeEnergy(energy))
+        {
+            mCamp.UpGradeCamp();
+            showCampInfo(mCamp);
+        }
+        else
+        {
+            mFacade.showMsg("energy is not enough");
+        }
+        
+    }
+
+    private void OnWeaponUpClick()
+    {
+        int energy = mCamp.EnergyCostWeaponUpGrade;
+        if (energy < 0)
+        {
+            mFacade.showMsg("weapon is maxLv can't up");
+            return;
+        }
+        if (mFacade.takeEnergy(energy))
+        {
+            mCamp.UpWeaponGrade();
+            showCampInfo(mCamp);
+        }
+        else
+        {
+            mFacade.showMsg("energy is not enough");
+        }
+        
     }
 }

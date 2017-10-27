@@ -15,6 +15,11 @@ public abstract class ICamp{
 
     private float mTrainTimer = 0;
 
+    protected IEnergyStrategy mEnergyCostStrategy;
+    protected int mEnergyCostCampUpGrade;
+    protected int mEnergyCostWeaponUpGrade;
+    protected int mEnergyCostTrain;
+
     public string Icon
     {
         get
@@ -32,6 +37,9 @@ public abstract class ICamp{
     }
     public abstract int Lv { get; }
     public abstract WeaponType WeaponType { get; }
+    public abstract int EnergyCostCampUpGrade { get; }
+    public abstract int EnergyCostWeaponUpGrade { get; }
+    public abstract int EnergyCostTrain { get; }
     public ICamp(GameObject gameObject, string name, string icon, SoldierType soldierType, Vector3 pos,float trainTime)
     {
         mGameObject = gameObject;
@@ -59,6 +67,10 @@ public abstract class ICamp{
             mTrainTimer = mTrainTime;
         }
     }
+
+    protected abstract void UpdateEnergyCost();
+    public abstract void UpGradeCamp();
+    public abstract void UpWeaponGrade();
 
     public abstract void Train();
     public void CancelTrain()

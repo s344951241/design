@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class IUI {
+
+    protected GameFacade mFacade;
+
     public GameObject mRootUI;
-    public virtual void Init() { }
+    public virtual void Init() {
+        mFacade = GameFacade.Instance;
+    }
     public virtual void Update() { }
     public virtual void Release() { }
 

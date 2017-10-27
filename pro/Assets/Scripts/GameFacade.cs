@@ -126,4 +126,22 @@ public class GameFacade{
     {
         mCharacterSystem.addEnemy(enemy);
     }
+    public bool takeEnergy(int value)
+    {
+        return mEnergySystem.takeEnergy(value);
+    }
+
+    public void showMsg(string msg)
+    {
+        mGameStateInfoUI.ShowMsg(msg);
+    }
+    public void RecycleEnergy(int value)
+    {
+        mEnergySystem.RecycleEnergy(value);
+    }
+
+    public void UpdateEnergySilder(int energy, int max)
+    {
+        mGameStateInfoUI.UpdateEnergySlider(energy, max);
+    }
 }
