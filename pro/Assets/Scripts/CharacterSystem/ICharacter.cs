@@ -12,6 +12,11 @@ public abstract class ICharacter{
     protected Animation mAnim;
     protected IWeapon mWeapon;
 
+    protected bool mIsKilled = false;
+    protected bool mCanDestroy = false;
+    protected float mDestroyTimer = 2;
+
+
     public void Attack(ICharacter target)
     {
         mWeapon.Fire(target.position);
@@ -28,13 +33,29 @@ public abstract class ICharacter{
         //死亡的效果，音效，视效(只有战士有)
     }
 
-    public void killed()
+    public virtual void killed()
     {
-        //TODO
+        mIsKilled = true;
+        mNavAgent.isStopped = true;
+    }
+
+    public void Release()
+    {
+        GameObject.Destroy(mGameObject);
+
     }
 
     public void Update()
     {
+        if (mIsKilled)
+        {
+            mDestroyTimer -= Time.deltaTime;
+            if (mDestroyTimer <= 0)
+            {
+                mCanDestroy = true;
+            }
+            return;
+        }
         mWeapon.Update();
     }
 
@@ -76,6 +97,9 @@ public abstract class ICharacter{
         mAudio.Play();
     }
 
+    public bool CanDestroy {
+        get { return mCanDestroy; }
+    }
     //public abstract void UpdateFSMAI(List<ICharacter> targets);
     public float AtkRange {
         get {

@@ -9,6 +9,7 @@ public class CharacterBuilderDirector{
         builder.addCharacterAttr();
         builder.addGameObject();
         builder.addWeapon();
+        builder.addInCharacterSystem();
         return builder.getResult();
     }
 }

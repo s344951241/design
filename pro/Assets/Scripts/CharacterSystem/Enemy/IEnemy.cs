@@ -18,8 +18,10 @@ public abstract class IEnemy : ICharacter {
 
     public void updateFSMAI(List<ICharacter> targets)
     {
+        if (mIsKilled)
+            return;
         mFSMSystem.CurrState.reason(targets);
-        mFSMSystem.CurrState.reason(targets);
+        mFSMSystem.CurrState.act(targets);
     }
     private void makeFSM()
     {
@@ -36,6 +38,8 @@ public abstract class IEnemy : ICharacter {
 
     public override void UnderAttack(int damage)
     {
+        if (mIsKilled)
+            return;
         base.UnderAttack(damage);
         playEffect();
         if (mAttr.CurHp <= 0)
@@ -45,4 +49,10 @@ public abstract class IEnemy : ICharacter {
     }
 
     protected abstract void playEffect();
+
+    public override void killed()
+    {
+        base.killed();
+        GameFacade.Instance.NotifySubject(GameEventType.EnemyKilled);
+    }
 }

@@ -73,7 +73,7 @@ public class GameFacade{
         mGameStateInfoUI.Init();
         mSoldierInfoUI.Init();
 
-
+        LoadMemento();
 
     }
 
@@ -105,11 +105,12 @@ public class GameFacade{
         mGamePauseUI.Release();
         mGameStateInfoUI.Release();
         mSoldierInfoUI.Release();
+        CreateMemento();
     }
 
     public Vector3 GetEnemyTargetPos()
     {
-        return Vector3.zero;//TODO
+        return mStageSystem.TargetPosition;
     }
 
     public void showCampInfo(ICamp camp)
@@ -144,4 +145,31 @@ public class GameFacade{
     {
         mGameStateInfoUI.UpdateEnergySlider(energy, max);
     }
+    public void RegisterObserver(GameEventType eventType, IGameEventObserver observer)
+    {
+        mGameEventSystem.RegisterObserver(eventType, observer);
+    }
+
+    public void RemoveObserver(GameEventType eventType, IGameEventObserver observer)
+    {
+        mGameEventSystem.RemoveObserver(eventType, observer);
+    }
+    public void NotifySubject(GameEventType eventType)
+    {
+        mGameEventSystem.NotifySubject(eventType);
+    }
+
+    public void LoadMemento()
+    {
+        AchievementMemento memento = new AchievementMemento();
+        memento.LoadData();
+        mArchievementSystem.SetMemento(memento);
+    }
+
+    public void CreateMemento()
+    {
+        AchievementMemento memento = mArchievementSystem.CreateMemento();
+        memento.SaveData();
+    }
+
 }

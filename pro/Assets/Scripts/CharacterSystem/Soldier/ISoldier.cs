@@ -36,12 +36,16 @@ public abstract class ISoldier : ICharacter {
 
     public void UpdateFSMAI(List<ICharacter> targets)
     {
+        if (mIsKilled)
+            return;
         mFSMSystem.CurrState.reason(targets);
         mFSMSystem.CurrState.act(targets);
     }
 
     public override void UnderAttack(int damage)
     {
+        if (mIsKilled)
+            return;
         base.UnderAttack(damage);
         if (mAttr.CurHp <= 0)
         {
@@ -53,7 +57,11 @@ public abstract class ISoldier : ICharacter {
 
     protected abstract void playSound();
     protected abstract void playEffect();
-  
 
+    public override void killed()
+    {
+        base.killed();
+        GameFacade.Instance.NotifySubject(GameEventType.SoldierKilled);
+    }
 
 }
