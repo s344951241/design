@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyTroll : IEnemy {
 
-    protected override void playEffect()
+    public override void playEffect()
     {
         doPlayEffect("TrollHitEffect");
     }

@@ -79,6 +79,7 @@ public abstract class ICharacter{
             }
             return mGameObject.transform.position;
         }
+
     }
 
     protected void doPlayEffect(string effectName)
@@ -120,6 +121,7 @@ public abstract class ICharacter{
             mAudio = mGameObject.GetComponent<AudioSource>();
             mAnim = mGameObject.GetComponentInChildren<Animation>();
         }
+        get { return mGameObject; }
     }
 
     public IWeapon Weapon {
@@ -129,5 +131,17 @@ public abstract class ICharacter{
             GameObject weaponPoint = UnityTool.FindChild(mGameObject,"weapon-point");
             UnityTool.Attach(weaponPoint, mWeapon.GameObject);
         }
+        get { return mWeapon; }
     }
+
+    public bool IsKilled
+    {
+        get
+        {
+            return mIsKilled;
+        }
+    }
+
+    public abstract void UpdateFSMAI(List<ICharacter> targets);
+    public abstract void RunVisitor(ICharacterVisitor visitor);
 }

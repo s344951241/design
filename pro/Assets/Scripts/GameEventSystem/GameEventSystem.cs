@@ -21,9 +21,12 @@ public class GameEventSystem : IGameSystem
     }
     private void InitGameEvents()
     {
-        mGameEvents.Add(GameEventType.EnemyKilled, new EnemyKilledSubject());
-        mGameEvents.Add(GameEventType.SoldierKilled, new SoldierKilledSubject());
-        mGameEvents.Add(GameEventType.NewStage, new NewStageSubject());
+        if(!mGameEvents.ContainsKey(GameEventType.EnemyKilled))
+            mGameEvents.Add(GameEventType.EnemyKilled, new EnemyKilledSubject());
+        if (!mGameEvents.ContainsKey(GameEventType.SoldierKilled))
+            mGameEvents.Add(GameEventType.SoldierKilled, new SoldierKilledSubject());
+        if (!mGameEvents.ContainsKey(GameEventType.NewStage))
+            mGameEvents.Add(GameEventType.NewStage, new NewStageSubject());
     }
 
     public void RegisterObserver(GameEventType eventType,IGameEventObserver observer)

@@ -6,7 +6,8 @@ public enum SoldierType
 {
     Rookie,
     Sergeant,
-    Captain
+    Captain,
+    Captive
 }
 public abstract class ISoldier : ICharacter {
 
@@ -34,12 +35,16 @@ public abstract class ISoldier : ICharacter {
         mFSMSystem.addState(idleState,chaseState,attackState);
     }
 
-    public void UpdateFSMAI(List<ICharacter> targets)
+    public override void UpdateFSMAI(List<ICharacter> targets)
     {
         if (mIsKilled)
             return;
         mFSMSystem.CurrState.reason(targets);
         mFSMSystem.CurrState.act(targets);
+    }
+    public override void RunVisitor(ICharacterVisitor visitor)
+    {
+        visitor.VisitSoldier(this);
     }
 
     public override void UnderAttack(int damage)

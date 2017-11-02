@@ -80,7 +80,6 @@ public class SoldierCamp : ICamp {
 
     public override void UpGradeCamp()
     {
-        //TODO
         mLv++;
         UpdateEnergyCost();
     }

@@ -49,4 +49,7 @@ public class ICharacterAttr  {
         if (damage < 5) damage = 5;
         mCurHp -= damage;
     }
+    public IAttrStrategy Strategy {
+        get { return mStrategy; }
+    }
 }

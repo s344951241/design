@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DesignModel\AdapterModel.cs" />
     <Compile Include="Assets\DesignModel\BridgeModel.cs" />
     <Compile Include="Assets\DesignModel\BuilderModel.cs" />
     <Compile Include="Assets\DesignModel\ChainModel.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\DesignModel\StateModel.cs" />
     <Compile Include="Assets\DesignModel\StrategyModel.cs" />
     <Compile Include="Assets\DesignModel\TempleModel.cs" />
+    <Compile Include="Assets\DesignModel\VisitorModel.cs" />
     <Compile Include="Assets\Scripts\ArchievementSystem\AchievementMemento.cs" />
     <Compile Include="Assets\Scripts\ArchievementSystem\ArchievementSystem.cs" />
     <Compile Include="Assets\Scripts\BaseClass\IGameSystem.cs" />
@@ -97,7 +99,9 @@
     <Compile Include="Assets\Scripts\Builder\ICharacterBuilder.cs" />
     <Compile Include="Assets\Scripts\Builder\SoldierBuilder.cs" />
     <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\CaptiveCamp.cs" />
     <Compile Include="Assets\Scripts\CampSystem\Command\ITrainCommand.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\Command\TrainCaptiveCommand.cs" />
     <Compile Include="Assets\Scripts\CampSystem\Command\TrainSoldierCommand.cs" />
     <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\IEnergyStrategy.cs" />
     <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\SoldierEnergyCostStrategy.cs" />
@@ -122,6 +126,7 @@
     <Compile Include="Assets\Scripts\CharacterSystem\ICharacter.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\ISoldier.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierCaptain.cs" />
+    <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierCaptive.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierRookie.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierSergeant.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\ISoldierState.cs" />
@@ -129,6 +134,8 @@
     <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierChaseState.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierFSMSystem.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierIdleState.cs" />
+    <Compile Include="Assets\Scripts\CharacterSystem\Visitor\AliveCountVisitor.cs" />
+    <Compile Include="Assets\Scripts\CharacterSystem\Visitor\ICharacterVisitor.cs" />
     <Compile Include="Assets\Scripts\Component\CampClick.cs" />
     <Compile Include="Assets\Scripts\Component\DestroyForTime.cs" />
     <Compile Include="Assets\Scripts\EnergySystem\EnergySystem.cs" />
@@ -136,6 +143,7 @@
     <Compile Include="Assets\Scripts\Factory\Asset\LocalAssetFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Asset\RemoteAssetFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Asset\ResourcesAssetFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\Asset\ResourcesAssetProxyFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Attr\AttrFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Attr\IAttrFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Charactor\EnemyFactory.cs" />

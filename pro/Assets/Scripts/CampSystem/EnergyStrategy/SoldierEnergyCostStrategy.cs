@@ -42,6 +42,8 @@ public class SoldierEnergyCostStrategy : IEnergyStrategy
             case SoldierType.Captain:
                 energy = 20;
                 break;
+            case SoldierType.Captive:
+                return 10;
             default:
                 break;
         }

@@ -17,6 +17,7 @@ public class GameStateInfoUI : IUI {
 
     private float mMsgTimer = 0;
     private float mMsgTime = 2;
+    private AliveCountVisitor mAliveCountVisitor = new AliveCountVisitor();
     public override void Init()
     {
         base.Init();
@@ -47,6 +48,7 @@ public class GameStateInfoUI : IUI {
     public override void Update()
     {
         base.Update();
+        UpdateAliveCount();
         if (mMsgTimer > 0)
         {
             mMsgTimer -= Time.deltaTime;
@@ -68,5 +70,11 @@ public class GameStateInfoUI : IUI {
         mEnergySlider.value = (float)nowEnergy / maxEnergy;
         mEnergyText.text = "(" + nowEnergy + "/" + maxEnergy + ")";
     }
-
+    public void UpdateAliveCount()
+    {
+        mAliveCountVisitor.Reset();
+        mFacade.RunVisitor(mAliveCountVisitor);
+        mSoldierCount.text = mAliveCountVisitor.SoldierCount.ToString();
+        mEnemyCount.text = mAliveCountVisitor.EnemyCount.ToString();
+    }
 }

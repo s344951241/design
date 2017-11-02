@@ -127,6 +127,11 @@ public class GameFacade{
     {
         mCharacterSystem.addEnemy(enemy);
     }
+
+    public void removeEnemy(IEnemy enemy)
+    {
+        mCharacterSystem.removeEnemy(enemy);
+    }
     public bool takeEnergy(int value)
     {
         return mEnergySystem.takeEnergy(value);
@@ -170,6 +175,11 @@ public class GameFacade{
     {
         AchievementMemento memento = mArchievementSystem.CreateMemento();
         memento.SaveData();
+    }
+
+    public void RunVisitor(ICharacterVisitor visitor)
+    {
+        mCharacterSystem.RunVisitor(visitor);
     }
 
 }

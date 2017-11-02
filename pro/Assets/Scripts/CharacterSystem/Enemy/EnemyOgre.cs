@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyOgre : IEnemy
 {
-    protected override void playEffect()
+    public override void playEffect()
     {
         doPlayEffect("OgreHitEffect");
     }

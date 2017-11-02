@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,12 +17,17 @@ public abstract class IEnemy : ICharacter {
     }
 
 
-    public void updateFSMAI(List<ICharacter> targets)
+    public override void  UpdateFSMAI(List<ICharacter> targets)
     {
         if (mIsKilled)
             return;
         mFSMSystem.CurrState.reason(targets);
         mFSMSystem.CurrState.act(targets);
+    }
+
+    public override void RunVisitor(ICharacterVisitor visitor)
+    {
+        visitor.VisitEnemy(this);
     }
     private void makeFSM()
     {
@@ -48,7 +54,7 @@ public abstract class IEnemy : ICharacter {
         }
     }
 
-    protected abstract void playEffect();
+    public abstract void playEffect();
 
     public override void killed()
     {

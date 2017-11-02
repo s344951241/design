@@ -41,7 +41,7 @@ public class CharacterSystem : IGameSystem
         foreach (IEnemy e in mEnemys)
         {
             e.Update();
-            e.updateFSMAI(mSoldier);
+            e.UpdateFSMAI(mSoldier);
         }
     }
 
@@ -70,6 +70,18 @@ public class CharacterSystem : IGameSystem
         {
             character.Release();
             characters.Remove(character);
+        }
+    }
+    public void RunVisitor(ICharacterVisitor visitor)
+    {
+        foreach (ICharacter c in mEnemys)
+        {
+            c.RunVisitor(visitor);
+        }
+
+        foreach (ICharacter c in mSoldier)
+        {
+            c.RunVisitor(visitor);
         }
     }
 }
