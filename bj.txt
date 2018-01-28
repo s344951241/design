@@ -52,6 +52,9 @@
 18.代理模式
 	--类上套一层类，包装一下0000
 
+19原型模式（Prototype Pattern）
+	是用于创建重复的对象，同时又能保证性能。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+
 switch 两次tab建（回车）
 
 MonoBehaviour有一个Invoke方法：过多长时间执行一个方法
@@ -68,4 +71,19 @@ ToString("0.0")小数点保留
 导航网格Navgation static 加入cube辅助生成然后删掉
 
  Mathf.Min(a,b)取最小值
+
+
+--->创建型模式
+  工厂[factory]，建造者[builder]，原型[prototype],单例[singleton]
+
+--->结构型模式
+  适配器[adapter]，桥接[bridge]，组合[composite]，装饰[decorator]
+  外观[facade]，享元[flyweight]，代理[proxy]
+
+--->对象型模式
+  责任链[chainofresponsibility] 
+  命令[command]，解释器[interpreter]，迭代器[iterator]，中介者[mediator]
+  备忘录[memento]，观察者[observer]，状态[state]，策略[strategy]
+  模板方法[template method]，访问者[visitor]
+
 
