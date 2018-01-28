@@ -1,5 +1,5 @@
 1.状态模式
-	--根据不同状态来切换场景
+	--状态拥有管理类，管理类拥有状态基类，通过管理类执行状态类的函数来切换状态
 
 2.外观模式
 	--管理类,管理子系统(总管理)
@@ -72,6 +72,7 @@ ToString("0.0")小数点保留
 
  Mathf.Min(a,b)取最小值
 
+Convert.ToInt32(object)转int
 
 --->创建型模式
   工厂[factory]，建造者[builder]，原型[prototype],单例[singleton]
