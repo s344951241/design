@@ -14,6 +14,8 @@ namespace Design
             Factory.Factory.invoke();
             AbstractFatory.AbstractFactory.invoke();
             Builder.BuilderModel.invoke();
+            Prototype.PrototypeModel.invoke();
+            Adapter.Adapter.invoke();
             Console.ReadKey();
         }
     }
