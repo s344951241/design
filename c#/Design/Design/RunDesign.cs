@@ -15,7 +15,7 @@ namespace Design
             writec("factory:");
             Factory.Factory.invoke();
             writec("abstractFatory:");
-            AbstractFatory.AbstractFactory.invoke();
+            AbstractFatory.AbstractFactoryModel.invoke();
             writec("builder:");
             Builder.BuilderModel.invoke();
             writec("prototype:");
@@ -34,6 +34,22 @@ namespace Design
             Flyweight.FlyweightModel.invoke();
             writec("proxy");
             Proxy.ProxyModel.invoke();
+            writec("chian");
+            Chain.Chain.invoke();
+            writec("command");
+            Command.CommandModel.invoke();
+            writec("mediator");
+            Mediator.MediatorModel.invoke();
+            writec("observer");
+            Observer.ObserverModel.invoke();
+            writec("strategy");
+            Strategy.StrategyModel.invoke();
+            writec("template");
+            Template.Templetemodel.invoke();
+            writec("visitor");
+            Visitor.VisitorModel.Invoke();
+            writec("state");
+            State.StateModel.invoke();
             Console.ReadKey();
         }
         private static void writec(string str)
